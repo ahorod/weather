@@ -11,13 +11,13 @@ function kelvinToCelsius(degreesKelvin) {
 $(document).ready(function() {
 
     $('#temp').click(function() {
-      alert("h");
+
       var city = $('#temp-location').val();
       $('#temp-location').val("");
-      var temperatureFormat = $("#temp").val();
+      var temperatureFormat = $("#temp-system").val();
       console.log(temperatureFormat );
       $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey, function(response) {
-        if (temperatureFormat === C) {
+        if (temperatureFormat === "F") {
           var farenheit = kelvinToFarenheit(response.main.temp);
           farenheit = farenheit.toFixed(0);
           $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%. The temperature is " + farenheit + " degrees farenheit");
@@ -47,7 +47,6 @@ function kelvinToCelsius(degreesKelvin) {
 }
 
 $(document).ready(function() {
-
   $('#weather-location').click(function() {
     var city = $('#location').val();
     $('#location').val("");

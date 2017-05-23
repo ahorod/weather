@@ -9,7 +9,6 @@ function kelvinToCelsius(degreesKelvin) {
 }
 
 $(document).ready(function() {
-
   $('#weather-location').click(function() {
     var city = $('#location').val();
     $('#location').val("");
